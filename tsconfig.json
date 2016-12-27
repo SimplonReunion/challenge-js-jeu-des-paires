@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "removeComments": true,
+    "sourceMap": true,
+    "pretty": true,
+    "outDir": "build",
+    "types": ["lodash"]
+  },
+  "files": [
+    "script/game.ts",
+    "script/card.ts",
+    "script/timer.ts"
+  ]
+}
