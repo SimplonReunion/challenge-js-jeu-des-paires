@@ -14,10 +14,9 @@ class Game {
 
     public start() {
         let timer = new Timer();
-        let cardName = ['ane', 'chat', 'chien', 'lama', 'lapins', 'lionne', 'ours'];
-        let randomizeCards = this.random(cardName);
-        console.log(randomizeCards);
-        console.log(randomizeCards.forEach((e) => new Card(e).show()))
+        let cardName = this.random(['ane', 'chat', 'chien', 'lama', 'lapins', 'lionne', 'ours']);
+        console.log(cardName);
+        console.log(cardName.forEach((e) => new Card(e).show()))
 
     }
 
