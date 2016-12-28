@@ -8,7 +8,7 @@ export class Card {
     protected static _increment = 0;
 
     private _name: string;
-    private _layout: any;
+    private _layout: Element; //Type (dom) Element
 
     constructor(name: string) {
         this._name = name;
@@ -17,13 +17,17 @@ export class Card {
     }
 
     public init(): void {
-        let card =
+        //Create the (dom) Element
+        let cardDomElement = document.createElement("div");
+        cardDomElement.innerHTML =
             `<div class="col-xs-3">
                 <div class="noir" id="${this._name }${Card._increment}"></div>
                 <img src="./img/${this._name}.jpg" id="${this._name}">
             </div>`;
-        this._layout.append(card);
-        //document.getElementById(this._name + Card._increment).onclick = this.click;
+        //Use insertBefore because "append" doesn't exist on the type Element 
+        this._layout.insertBefore(cardDomElement,null);
+        //bind the onclick event on this.click
+        document.getElementById(this._name + Card._increment).onclick = this.click;
     }
 
     public show(card: any) {
